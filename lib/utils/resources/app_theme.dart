@@ -1,4 +1,4 @@
-import 'package:evently/utils/resources/app_colors.dart';
+import 'package:eventak/utils/resources/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class AppTheme {
