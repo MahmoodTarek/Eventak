@@ -1,6 +1,7 @@
 import 'package:eventak/provider/language_provider.dart';
 import 'package:eventak/provider/theme_provider.dart';
 import 'package:eventak/ui/bottom_nav/bottom_nav.dart';
+import 'package:eventak/ui/screens/login/login.dart';
 import 'package:eventak/utils/resources/app_routes.dart';
 import 'package:eventak/utils/resources/app_theme.dart';
 import 'package:flutter/material.dart';
@@ -22,8 +23,11 @@ class EventakApp extends StatelessWidget {
       initialRoute: AppRoutes.bottomNav,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: Locale(languageProvider.currentLanguage),
-      routes: {AppRoutes.bottomNav: (context) => const BottomNav()},
+      locale: Locale(languageProvider.currentLanguage.name),
+      routes: {
+        AppRoutes.bottomNav: (context) => const BottomNav(),
+        AppRoutes.login: (context) => const Login(),
+      },
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: themeProvider.currentTheme,
