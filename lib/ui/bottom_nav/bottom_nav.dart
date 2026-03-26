@@ -4,12 +4,12 @@ import 'package:eventak/provider/theme_provider.dart';
 import 'package:eventak/ui/bottom_nav/tabs/favorite/favorite.dart';
 import 'package:eventak/ui/bottom_nav/tabs/home/home.dart';
 import 'package:eventak/ui/bottom_nav/tabs/profile/profile.dart';
-import 'package:eventak/utils/resources/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
 import '../../utils/resources/app_assets.dart';
+import '../../utils/resources/app_styles.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({super.key});
@@ -47,11 +47,13 @@ class _BottomNavState extends State<BottomNav> {
     final bool isDark = themeProvider.currentTheme == ThemeMode.dark;
 
     return Scaffold(
-      body: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 500),
-        switchInCurve: Curves.easeInBack,
-        switchOutCurve: Curves.easeInOutBack,
-        child: tabs[currentIndex],
+      body: SafeArea(
+        child: AnimatedSwitcher(
+          duration: const Duration(milliseconds: 500),
+          switchInCurve: Curves.easeInBack,
+          switchOutCurve: Curves.easeInOutBack,
+          child: tabs[currentIndex],
+        ),
       ),
 
       bottomNavigationBar: AnimatedNotchBottomBar(
@@ -64,6 +66,7 @@ class _BottomNavState extends State<BottomNav> {
         kIconSize: 24,
         kBottomRadius: 32,
         bottomBarHeight: 56,
+        bottomBarWidth: MediaQuery.of(context).size.width,
         elevation: 8,
         shadowElevation: 2,
         textAlign: TextAlign.center,
