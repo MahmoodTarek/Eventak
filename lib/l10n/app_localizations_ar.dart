@@ -24,6 +24,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get dark_mode => 'الوضع الداكن';
 
   @override
+  String get light_mode => 'الوضع الفاتح';
+
+  @override
   String get common_skip => 'تخطي';
 
   @override
@@ -194,4 +197,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get profile_tab => 'الحساب';
+
+  @override
+  String get english => 'انجليزي';
+
+  @override
+  String get arabic => 'عربي';
+
+  @override
+  String get current_language => 'اللغة الحالية';
 }

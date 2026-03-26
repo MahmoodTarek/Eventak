@@ -24,6 +24,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dark_mode => 'Dark mode';
 
   @override
+  String get light_mode => 'Light mode';
+
+  @override
   String get common_skip => 'Skip';
 
   @override
@@ -194,4 +197,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get profile_tab => 'Profile';
+
+  @override
+  String get english => 'English';
+
+  @override
+  String get arabic => 'Arabic';
+
+  @override
+  String get current_language => 'Current Language';
 }
